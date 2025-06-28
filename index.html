@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<style>
+				body {
+					
+					background-color : #FFCFF1
+				}
+				a {
+					text-decoration : none;
+					
+				}
+				span {
+					padding-left : 1200px;
+					font-size : 20px;
+				}
+				table{
+					border-color : white;
+					text-align : center;
+					
+					padding : 30px;
+				}
+				tr:nth-child(odd) {
+					background-color : white
+				}
+				td {
+					padding : 1px;
+					padding-bottom : 0px;
+				}
+				
+				
+			</style>
+			<title>
+				To do List
+			</title>
+		</head>
+		<body>
+			<center><h1>To-Do List</h1></center>
+			<span><a href = '/add-task'> ➕ </a></span><br>
+			<table width = 100%>
+			{% if tasks %}
+				{% for name in tasks.keys() %}
+					<tr>
+					<td width = 3% style = "vertical-align : center;">
+						{% if tasks[name] == 'u' %}
+							<a href = '/change/{{name}}'> ⚠️ </a>
+							<h2><td style = "padding-left : 15px; ">{{name}}</td> </h2>
+						{% else %}
+							<a href = '/change/{{name}}'> ✅ </a>
+							<h2><td style = "padding-left : 15px;"><s>{{name}}</s></td> </h2>
+						{%endif%}
+					</td>
+					
+						<td width = 4%><a href ='/edit/{{name}}'> ✏️ </a></td>
+						<td width = 4%><a href ='/delete/{{name}}' > 🗑️ </a></td>
+					</tr>
+
+ 
+					</tr>
+				{%endfor%}
+			{% else %}
+				<h2>No tasks</h2>
+			{% endif %}
+					
+						
+
+			
+		</body>
+	</html>

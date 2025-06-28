@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<style>
+				body {
+					
+					background-color : #FFCFF1
+				}
+				a {
+					text-decoration : none;
+				}
+				form {
+					text-align : center;
+					padding-top : 230px;
+				}
+				input {
+					padding : 3px;
+				}
+				
+			</style>
+			<title>
+				Add Task
+			</title>
+		</head>
+		<body>
+			<form method = 'POST' action = '/edit/{{name}}'>
+				<input type = "text" name = "name" value = "{{name}}" required><br><br>
+				<input type = "submit" value = "Edit"> <br><br>
+				<a href ='/'> ← Back to Tasks </a>
+
+				
+
+			
+		</body>
+	</html>
